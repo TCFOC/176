@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Prompt', sans-serif;
+  background: linear-gradient(135deg, #fdfdfd, #fff5c2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #8c6700;
+  padding: 40px 0; /* vertical breathing room */
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background: white;
+  border: 2px solid #8c6700;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  max-width: 650px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  line-height: 70%;
+  margin-bottom: 0.3em;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  max-width: 100%;
+}
+
+input[type="text"],
+button {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 2px solid #8c6700;
+  height: 44px;
+  box-sizing: border-box;
+  color: #8c6700;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 400px;
+}
+
+button {
+  background-color: #8c6700;
+  border: 0;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+input[type="text"]::placeholder {
+  color: #a0965c;
+}
+
+#resultDialog {
+  width: 90%;
+  max-width: 650px;  /* match .wrapper */
+  margin: 20px auto 0 auto;
+  padding: 20px 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #b8af7b;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  color: #6a1b9a;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  box-sizing: border-box;
+  display: none;
+  animation: fadeUp 0.5s ease forwards;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) {
+  #resultDialog {
+    /* Remove width 50vw override to keep matching wrapper */
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+#resultDialog.visible {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+}
+
+#resultDialog.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
