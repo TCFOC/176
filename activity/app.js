@@ -1,5 +1,3 @@
-var count = 0;
-
 const form = document.getElementById("magicForm");
 const input = document.getElementById("numberInput");
 const dialog = document.getElementById("resultDialog");
@@ -143,12 +141,6 @@ function displayData(id) {
   showDialog(html);
 }
 
-function displaySpecial(i) {
-  const nameChar = ['', '', 'อ', 'อ', 'ม', 'สิ', 'น'];
-  const html = `<strong style="color: #e91e63;">ไม่พบข้อมูล</strong><br><span style="font-size:20px">กรุณาตรวจสอบเลขประจำตัว${nameChar[i]}</span>`;
-  showDialog(html);
-}
-
 form.addEventListener("submit", e => {
   e.preventDefault();
   const value = input.value.trim();
@@ -160,11 +152,7 @@ form.addEventListener("submit", e => {
       <div style="font-size:20px"><strong style="color:#e91e63">ฐานกิจกรรม TEST</strong><br>สถานที่ TEST</div><br>
       <div style="font-size:20px"><strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก TEST</strong><br>สถานที่ TEST</div>
     `);
-  } else */
-  if (value === '41310' && count < 7) {
-    displaySpecial(count);
-    count += 1;
-  } else if (activ.findIndex(entry => entry[0] === value) !== -1) {
+  } else */if (activ.findIndex(entry => entry[0] === value) !== -1) {
     displayData(value);
   } else {
     showDialog(`<strong style="color: #e91e63;">ไม่พบข้อมูล</strong><br><span style="font-size:20px">กรุณาตรวจสอบเลขประจำตัว</span>`);
