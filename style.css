@@ -11,7 +11,9 @@ body {
   padding: 60px 20px;
   font-family: 'Prompt', sans-serif;
   background-image: url(chapel.jpeg);
-  background-size: auto 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
