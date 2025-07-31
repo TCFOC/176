@@ -2,6 +2,9 @@ const form = document.getElementById("magicForm");
 const input = document.getElementById("numberInput");
 const dialog = document.getElementById("resultDialog");
 
+
+
+
 const pairs = [
   ["Red Light Green Light", "สนามบอล"],
   ["วิ่งผลัด", "สนามบอล"],
@@ -117,40 +120,29 @@ function displayTest(i) {
 }
 
 function displayData(id) {
-  function status(code) {
-    if (code === 1) {
-      return " (ช่วย)";
-    } else {
-      return "";
-    }
-  }
   const html = `
       <div style="font-size:20px">
         <strong style="color:#e91e63">ฐานกิจกรรม ${pairs[activ[activ.findIndex(entry => entry[0] === id)][1]][0]}</strong><br>
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][1]][1]}
       </div><br>
       <div style="font-size:20px">
-        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}<!--${status(activ[activ.findIndex(entry => entry[0] === id)][3])}--></strong><br>
+        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}</strong><br>
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][1]}
       </div>
     `;
   showDialog(html);
 }
 
-form.addEventListener("submit", e => {
+document.getElementById('plform').addEventListener("submit", e => {
   e.preventDefault();
-  const value = input.value.trim();
+  const tens = document.getElementById('grade').value.trim();
+  const units = document.getElementById('class').value.trim();
+  
+  const groupCode = parseInt(tens) * 10 + parseInt(units);
 
-  /*if (value === "33333") {
-    showDialog(`<strong style="color: #e91e63;">Hello World</strong>`);
-  } else if (value === "44444") {
-    showDialog(`
-      <div style="font-size:20px"><strong style="color:#e91e63">ฐานกิจกรรม TEST</strong><br>สถานที่ TEST</div><br>
-      <div style="font-size:20px"><strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก TEST</strong><br>สถานที่ TEST</div>
-    `);
-  } else */if (activ.findIndex(entry => entry[0] === value) !== -1) {
-    displayData(value);
+  if (tens != 0 && units != 0 && !isNaN(groupCode)) {
+    showDialog(`<h1>${groupCode}</h1>`);
   } else {
-    showDialog(`<strong style="color: #e91e63;">ไม่พบข้อมูล</strong><br><span style="font-size:20px">กรุณาตรวจสอบเลขประจำตัว</span>`);
+    hideDialog();
   }
 });

@@ -141,7 +141,7 @@ input[type="text"]::placeholder {
   }
 }
 
-#dropdown {
+#grade, #class {
   font-family: 'Prompt', sans-serif;
   width: 40%;
   max-width: 400px;
@@ -153,6 +153,5 @@ input[type="text"]::placeholder {
   border: 2px solid #8c6700;
   border-radius: 8px !important;
   box-sizing: border-box;
-  /*ppearance: none; /* for a cleaner look on some browsers */
   appearance: auto;
 }
