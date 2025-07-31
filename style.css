@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Prompt', sans-serif;
-  background: linear-gradient(135deg, #f2e5ff, #d9c2f0);
+  background: linear-gradient(135deg, #fdfdfd, #d9c2f0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,12 +14,12 @@ body {
 
 .wrapper {
   background: white;
-  border: 1px solid black;
+  border: 2px solid #4b0082;
   padding: 30px 40px;
   box-sizing: border-box;
   max-width: 650px;
   width: 90%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border-radius: 12px;
   text-align: center;
 }
@@ -108,6 +108,7 @@ input[type="text"]::placeholder {
   box-sizing: border-box;
   display: none;
   animation: fadeUp 0.5s ease forwards;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 @media (min-width: 768px) {
