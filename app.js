@@ -150,8 +150,6 @@ form.addEventListener("submit", e => {
     `);
   } else */if (activ.findIndex(entry => entry[0] === value) !== -1) {
     displayData(value);
-  } else if (value === "") {
-    hideDialog();
   } else {
     showDialog(`<strong style="color: #e91e63;">ไม่พบข้อมูล</strong><br><span style="font-size:20px">กรุณาตรวจสอบเลขประจำตัว</span>`);
   }

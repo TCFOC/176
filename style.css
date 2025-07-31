@@ -106,7 +106,8 @@ input[type="text"]::placeholder {
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   box-sizing: border-box;
-  animation: none;
+  display: none;
+  animation: fadeUp 0.5s ease forwards;
 }
 
 @media (min-width: 768px) {
@@ -121,7 +122,6 @@ input[type="text"]::placeholder {
   opacity: 1;
   transform: translateY(0);
   display: block;
-  animation: fadeup 0.5s ease forwards;
 }
 
 #resultDialog.hidden {
