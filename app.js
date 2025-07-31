@@ -25,9 +25,9 @@ const pairs = [
 
 
 const activ = [
-  ['00000', 0, 2, 1],
+  /*['00000', 0, 2, 1],
   ['11111', 1, 6, 1],
-  ['22222', 2, 2, 0],
+  ['22222', 2, 2, 0],*/
   ['41125', 17, 17, 0],
   ['41350', 16, 16, 0],
 
@@ -141,16 +141,18 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   const value = input.value.trim();
 
-  if (value === "33333") {
+  /*if (value === "33333") {
     showDialog(`<strong style="color: #e91e63;">Hello World</strong>`);
   } else if (value === "44444") {
     showDialog(`
       <div style="font-size:20px"><strong style="color:#e91e63">ฐานกิจกรรม TEST</strong><br>สถานที่ TEST</div><br>
       <div style="font-size:20px"><strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก TEST</strong><br>สถานที่ TEST</div>
     `);
-  } else if (activ.findIndex(entry => entry[0] === value) !== -1) {
+  } else */if (activ.findIndex(entry => entry[0] === value) !== -1) {
     displayData(value);
-  } else {
+  } else if (value === "") {
     hideDialog();
+  } else {
+    showDialog(`<strong style="color: #e91e63;">ไม่พบข้อมูล</strong><br><span style="font-size:20px">กรุณาตรวจสอบเลขประจำตัว</span>`);
   }
 });
