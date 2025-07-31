@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Magic Number</title>
+  <title>พี่รับน้อง 176</title>
   <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Enter the Magic Number</h1>
-    <form id="magicForm">
-      <input type="text" id="numberInput" placeholder="Type here..." />
-    </form>
-    <div id="resultDialog" class="hidden">Hello World</div>
+  <div class="wrapper">
+    <div class="container">
+      <h1 style="line-height:110%">ตรวจสอบฐานของตนเอง</h1>
+      <h3>ฝ่ายกิจกรรม</h3>
+      <form id="magicForm" style="display: flex; align-items: center; gap: 10px;">
+        <input type="text" id="numberInput" placeholder="เลขประจำตัว" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </div>
+
+  <div id="resultDialog" class="hidden"></div>
+
   <script src="app.js"></script>
 </body>
 </html>
