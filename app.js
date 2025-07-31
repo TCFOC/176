@@ -130,7 +130,7 @@ function displayData(id) {
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][1]][1]}
       </div><br>
       <div style="font-size:20px">
-        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}${status(activ[activ.findIndex(entry => entry[0] === id)][3])}</strong><br>
+        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}<!--${status(activ[activ.findIndex(entry => entry[0] === id)][3])}--></strong><br>
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][1]}
       </div>
     `;
