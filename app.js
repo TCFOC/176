@@ -4,14 +4,40 @@ const dialog = document.getElementById("resultDialog");
 
 const pairs = [
   ["Red Light Green Light", "สนามบอล"],
-  ["Test1", "Hello1"],
-  ["Test2", "Hello2"]
+  ["วิ่งผลัด", "สนามบอล"],
+  ["Mingle", "โรงยิมชั้น 3"],
+  ["Guard The Cone", "สนามบอล"],
+  ["เตะจุดโทษ", "สนามบอล"],
+  ["เดินสามขา", "สนามบอล"],
+  ["Simon Says", "ห้องประชุม 2"],
+  ["Landmine", "ใต้สิรินาถ"],
+  ["โบวลิ่ง", "โรงยิมชั้น 2"],
+  ["ปาปิงปองลงแก้ว", "โรงยิมชั้น 2"],
+  ["Beanbag", "สนามบอล"],
+  ["ป้องกันลูกโป่ง", "สวนปาล์ม"],
+  ["ชักเย่อ", "สนามบอล"],
+  ["Davinci เกมถอดรหัส", "ห้อง EIP เก่า"],
+  ["วิ่งผลัด XO", "สนามบอล"],
+  ["เก้าอี้ดนตรี", "โรงยิมชั้น 2"],
+  ["หัวหน้าฝ่ายกิจกรรม", "-"],
+  ["รองหัวหน้าฝ่ายกิจกรรม", "-"],
 ];
 
+
 const activ = [
-  ["00000", 0, 1],
-  ["11111", 1, 0],
-  ["22222", 2, 2]
+  ["00000", 0, 2, 1],
+  ["11111", 1, 6, 1],
+  ["22222", 2, 2, 0],
+  ["41025", 0, 2, 1],
+  ["41030", 2, 2, 0],
+  ["41038", 7, 7, 0],
+  ['41042', 0, 2, 1],
+  ['41045', 8, 8, 0],
+  ['41125', 17, 17, 0],
+  ['41350', 16, 16, 0],
+  ['44543', 10, 8, 1],
+  ['41019', 3, 9, 1],
+  ['41027', 3, 9, 1],
 ]
 
 function showDialog(html) {
@@ -36,18 +62,25 @@ function displayTest(i) {
   }
 }
 
-function displayStyledTest(id) {
-    const html = `
+function displayData(id) {
+  function status(code) {
+    if (code === 1) {
+      return " (ช่วย)";
+    } else {
+      return "";
+    }
+  }
+  const html = `
       <div style="font-size:20px">
         <strong style="color:#e91e63">ฐานกิจกรรม ${pairs[activ[activ.findIndex(entry => entry[0] === id)][1]][0]}</strong><br>
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][1]][1]}
       </div><br>
       <div style="font-size:20px">
-        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}</strong><br>
+        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}${status(activ[activ.findIndex(entry => entry[0] === id)][3])}</strong><br>
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][1]}
       </div>
     `;
-    showDialog(html);
+  showDialog(html);
 }
 
 form.addEventListener("submit", e => {
@@ -61,19 +94,8 @@ form.addEventListener("submit", e => {
       <div style="font-size:20px"><strong style="color:#e91e63">ฐานกิจกรรม TEST</strong><br>สถานที่ TEST</div><br>
       <div style="font-size:20px"><strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก TEST</strong><br>สถานที่ TEST</div>
     `);
-  } else if (value === "00000") {
-    displayStyledTest("00000");
-  } else if (value === "11111") {
-    displayStyledTest("11111");
-  } else if (value === "22222") {
-    displayStyledTest("22222");
-  } else if (value.startsWith("test")) {
-    const index = parseInt(value.slice(4));
-    if (!isNaN(index)) {
-      displayTest(index);
-    } else {
-      hideDialog();
-    }
+  } else if (activ.findIndex(entry => entry[0] === value) !== -1) {
+    displayData(value);
   } else {
     hideDialog();
   }
