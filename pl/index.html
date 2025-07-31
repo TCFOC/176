@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,13 +8,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="wrapper">
     <div class="container">
       <h1 style="line-height:110%">ตรวจสอบฐาน</h1>
       <h3>ฝ่ายพี่เลี้ยง</h3>
-      <form id="magicForm" style="display: flex; align-items: center; gap: 10px;">
-        <input type="text" id="numberInput" placeholder="เลขประจำตัว" />
+      <form id="grade" style="display: flex; align-items: center; gap: 10px;">
+        <select id="dropdown">
+          <option value="0">เลือกระดับชั้น</option>
+          <option value="1">ม.1 IEP</option>
+          <option value="2">ม.1 EIP</option>
+          <option value="3">ม.2 IEP</option>
+          <option value="4">ม.2 EIP</option>
+        </select>
+        <select id="dropdown">
+          <option value="0">เลือกระดับชั้น</option>
+          <option value="1">ม.1 IEP</option>
+          <option value="2">ม.1 EIP</option>
+          <option value="3">ม.2 IEP</option>
+          <option value="4">ม.2 EIP</option>
+        </select>
+
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -25,4 +41,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>

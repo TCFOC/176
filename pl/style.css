@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Prompt', sans-serif !important;
   background: linear-gradient(135deg, #fdfdfd, #fff5c2);
   display: flex;
   flex-direction: column;
@@ -139,4 +139,20 @@ input[type="text"]::placeholder {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+#dropdown {
+  font-family: 'Prompt', sans-serif;
+  width: 40%;
+  max-width: 400px;
+  height: 44px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8c6700;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #8c6700;
+  border-radius: 8px !important;
+  box-sizing: border-box;
+  /*ppearance: none; /* for a cleaner look on some browsers */
+  appearance: auto;
 }
