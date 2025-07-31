@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>พี่รับน้อง 176</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1 style="line-height:110%">ตรวจสอบฐาน</h1>
+      <h3>กรุณาเลือกห้องที่เป็นพี่เลี้ยง</h3>
+      <form id="plform">
+        <div style="align-items: center; display: flex; gap: 10px; margin-bottom:20px;">
+          <select id="grade" class="highlighted">
+            <option value="0" selected disabled>ระดับชั้น</option>
+            <option value="1">ม.1 IEP</option>
+            <option value="2">ม.1 EIP</option>
+            <option value="3">ม.2 IEP</option>
+            <option value="4">ม.2 EIP</option>
+          </select>
+          <select id="class">
+            <option value="0" disabled>---</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="resultDialog" class="hidden"></div>
+
+  <p style="position:fixed; bottom:10px; text-align: center; font-size: 1em; line-height:95%;">งานพี่รับน้อง 176 -
+    ฝ่ายพี่เลี้ยง<br><span style="font-size:0.7em">Made by Korn M311</span></p>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

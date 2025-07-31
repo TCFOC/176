@@ -8,45 +8,29 @@ html {
 
 body {
   margin: 0;
-  padding: 60px 20px;
+  padding: 0;
   font-family: 'Prompt', sans-serif;
-  background-image: url(chapel.jpeg);
-  background-size: auto 100%;
+  background: linear-gradient(135deg, #fdfdfd, #d9c2f0);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #000000;
+  min-height: 100vh;
+  color: #4b0082;
+  padding: 40px 0; /* vertical breathing room */
   box-sizing: border-box;
 }
 
 .wrapper {
-  backdrop-filter: blur(10px) brightness(1.25) !important;
-  -webkit-backdrop-filter: blur(10px) brightness(1.25) !important;
-  border: 2px solid #000000;
+  background: white;
+  border: 2px solid #4b0082;
   padding: 30px 40px;
   box-sizing: border-box;
   max-width: 650px;
   width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border-radius: 12px;
   text-align: center;
-  animation: scaleIn 1s ease forwards;
 }
-
-@keyframes scaleIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  30% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 
 .container {
   width: 100%;
@@ -79,6 +63,7 @@ button {
   font-weight: bold;
   padding: 12px 20px;
   border-radius: 10px;
+  border: 2px solid #4b0082;
   height: 44px;
   box-sizing: border-box;
   color: #4b0082;
@@ -95,6 +80,7 @@ input[type="text"] {
 
 button {
   background-color: #4b0082;
+  border: 0;
   color: #fff;
   border-radius: 10px;
   display: flex;

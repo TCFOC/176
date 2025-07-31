@@ -2,9 +2,6 @@ const form = document.getElementById("magicForm");
 const input = document.getElementById("numberInput");
 const dialog = document.getElementById("resultDialog");
 
-
-
-
 const pairs = [
   ["Red Light Green Light", "สนามบอล"],
   ["วิ่งผลัด", "สนามบอล"],
@@ -72,9 +69,11 @@ const activ = [
 
   ['41045', 8, 8, 0],
   ['41316', 8, 8, 0],
+  ['41404', 8, 8, 0],
 
   ['41320', 9, 9, 0],
   ['45101', 9, 9, 0],
+  ['41080', 9, 9, 0],
 
   ['41462', 10, 13, 0],
   ['44543', 10, 9, 0],
@@ -86,6 +85,7 @@ const activ = [
 
   ['45223', 12, 7, 0],
   ['45181', 12, 6, 0],
+  ['41405', 12, 6, 0],
   
   ['41461', 13, 13, 0],
   ['46323', 13, 13, 0],
@@ -94,7 +94,8 @@ const activ = [
   ['45095', 14, 7, 1],
 
   ['41058', 15, 15, 0],
-  ['41162', 15, 15, 0]
+  ['41162', 15, 15, 0],
+  ['41343', 15, 15, 0]
 ]
 
 function showDialog(html) {
@@ -120,29 +121,40 @@ function displayTest(i) {
 }
 
 function displayData(id) {
+  function status(code) {
+    if (code === 1) {
+      return " (ช่วย)";
+    } else {
+      return "";
+    }
+  }
   const html = `
       <div style="font-size:20px">
         <strong style="color:#e91e63">ฐานกิจกรรม ${pairs[activ[activ.findIndex(entry => entry[0] === id)][1]][0]}</strong><br>
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][1]][1]}
       </div><br>
       <div style="font-size:20px">
-        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}</strong><br>
+        <strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][0]}<!--${status(activ[activ.findIndex(entry => entry[0] === id)][3])}--></strong><br>
         สถานที่ ${pairs[activ[activ.findIndex(entry => entry[0] === id)][2]][1]}
       </div>
     `;
   showDialog(html);
 }
 
-document.getElementById('plform').addEventListener("submit", e => {
+form.addEventListener("submit", e => {
   e.preventDefault();
-  const tens = document.getElementById('grade').value.trim();
-  const units = document.getElementById('class').value.trim();
-  
-  const groupCode = parseInt(tens) * 10 + parseInt(units);
+  const value = input.value.trim();
 
-  if (tens != 0 && units != 0 && !isNaN(groupCode)) {
-    showDialog(`<h1>${groupCode}</h1>`);
+  /*if (value === "33333") {
+    showDialog(`<strong style="color: #e91e63;">Hello World</strong>`);
+  } else if (value === "44444") {
+    showDialog(`
+      <div style="font-size:20px"><strong style="color:#e91e63">ฐานกิจกรรม TEST</strong><br>สถานที่ TEST</div><br>
+      <div style="font-size:20px"><strong style="color:#2196f3">ฐานกิจกรรมกรณีฝนตก TEST</strong><br>สถานที่ TEST</div>
+    `);
+  } else */if (activ.findIndex(entry => entry[0] === value) !== -1) {
+    displayData(value);
   } else {
-    hideDialog();
+    showDialog(`<strong style="color: #e91e63;">ไม่พบข้อมูล</strong><br><span style="font-size:20px">กรุณาตรวจสอบเลขประจำตัว</span>`);
   }
 });

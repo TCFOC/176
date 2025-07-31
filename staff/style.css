@@ -1,3 +1,10 @@
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +15,7 @@ body {
   align-items: center;
   min-height: 100vh;
   color: #8c6700;
-  padding: 40px 0; /* vertical breathing room */
+  padding: 20px 0; /* vertical breathing room */
   box-sizing: border-box;
 }
 
@@ -38,14 +45,6 @@ h1 {
 h3 {
   margin-top: 0;
   margin-bottom: 1em;
-}
-
-form {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  max-width: 100%;
 }
 
 input[type="text"],
@@ -97,10 +96,10 @@ input[type="text"]::placeholder {
   margin: 20px auto 0 auto;
   padding: 20px 10px;
   background-color: rgba(255, 255, 255, 0.85);
-  border: 2px solid #b8af7b;
+  border: 2px solid #8c6700;
   border-radius: 12px;
   font-size: 1.5rem;
-  color: #6a1b9a;
+  color: #8c6700;
   font-weight: bold;
   opacity: 0;
   transform: translateY(20px);
@@ -143,8 +142,7 @@ input[type="text"]::placeholder {
 
 #grade, #class {
   font-family: 'Prompt', sans-serif;
-  width: 40%;
-  max-width: 400px;
+  width: 50%;
   height: 44px;
   font-size: 1.2rem;
   font-weight: bold;
@@ -154,4 +152,11 @@ input[type="text"]::placeholder {
   border-radius: 8px !important;
   box-sizing: border-box;
   appearance: auto;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#grade.highlighted, #class.highlighted {
+  background-color: #8c6700;
+  color: #ffffff;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
