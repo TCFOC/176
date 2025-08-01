@@ -99,7 +99,7 @@ const activ = [
   ['41058', 15, 15, 0],
   ['41162', 15, 15, 0],
   ['41343', 15, 15, 0]
-]
+];
 
 function showDialog(html) {
   dialog.innerHTML = html;
